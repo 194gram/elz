@@ -1,0 +1,45 @@
+.start-text-box {
+  // @extend %front-page-text-wrapper;
+}
+
+.img-wrap {
+  @extend %center;
+  text-align: center;
+}
+
+.text-wrap {
+  position: absolute;
+  font-size: .7em;
+  color: white;
+  text-shadow: 5px 3px 3px black;
+
+  a {
+    font-size: 1.2em;
+    color: white;
+    margin-top: 1em;
+    padding: .5em 3em;
+    border: 1px solid;
+    outline: 1px gray solid;
+  }
+
+  h2 {
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 760px) {
+  .text-wrap {
+    font-size: 1em;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .text-wrap {
+    font-size: .7em;
+  }
+
+  .work-showcase {
+    margin-bottom: 5em;
+    display: flex;
+  }
+}

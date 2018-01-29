@@ -1,0 +1,490 @@
+.img-wrap, .contact-main, .contact-main .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: capitalize; }
+
+html, body, ul, ol, li, form, fieldset, legend {
+  margin: 0;
+  padding: 0; }
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-top: 0; }
+
+h1 {
+  margin: 0; }
+
+li {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+.header-start {
+  height: 4em; }
+
+header {
+  background-color: black;
+  color: white;
+  height: 4em;
+  width: 100%;
+  padding: 0 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1; }
+  header h1 {
+    top: .7em;
+    right: 1em;
+    position: absolute;
+    font-size: 1.5em;
+    border: 2px solid white;
+    padding: 6px;
+    margin: -6px;
+    border-radius: 15px; }
+
+.desktop-menu {
+  display: none;
+  width: 80%;
+  font-size: .8em; }
+  .desktop-menu ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around; }
+  .desktop-menu a {
+    text-decoration: none;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold; }
+    .desktop-menu a:hover {
+      color: red;
+      -webkit-transition: all .3s ease;
+      -o-transition: all .3s ease;
+      transition: all .3s ease; }
+
+@media (min-width: 760px) {
+  .desktop-menu {
+    display: block; } }
+
+@media screen and (min-width: 990px) {
+  .desktop-menu {
+    margin: 0 auto;
+    max-width: 50%; } }
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 1em;
+  background: black;
+  color: white; }
+  footer ul {
+    margin: 5em; }
+  footer h2 {
+    font-size: 1em;
+    letter-spacing: 2px;
+    margin: 1em; }
+  footer p {
+    color: gray;
+    font-size: .5em; }
+  footer img {
+    width: 40%; }
+  footer a {
+    color: white; }
+    footer a:hover {
+      color: red;
+      -webkit-transition: all .3s ease;
+      -o-transition: all .3s ease;
+      transition: all .3s ease; }
+  footer .info {
+    display: none;
+    text-align: left;
+    margin: 10em;
+    letter-spacing: 0.1em; }
+    footer .info h4 {
+      text-transform: uppercase;
+      color: #ae9f9f; }
+  @media (min-width: 768px) {
+    footer img, footer h2, footer p {
+      display: none; }
+    footer .info {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+      justify-content: space-evenly; } }
+
+@supports not ((display: -webkit-box) or (display: flex)) {
+  .img-wrap {
+    float: right; } }
+
+.logo-wrap {
+  position: relative; }
+
+.background-image {
+  width: 100%;
+  max-height: 38em;
+  -o-object-fit: cover;
+  object-fit: cover; }
+
+.logo-img {
+  width: 60%;
+  max-width: 30em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+.img-wrap {
+  width: 33.3%; }
+
+/*
+ * Made by Erik Terwan
+ * 24th of November 2015
+ * All rights reserved
+ *
+ *
+ * If you are thinking of using this in
+ * production code, beware of the browser
+ * prefixes.
+ */
+#menuToggle {
+  display: block;
+  position: relative;
+  z-index: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  /* hide this */
+  z-index: 2;
+  /* and place it over the hamburger */
+  -webkit-touch-callout: none; }
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #cdcdcd;
+  border-radius: 3px;
+  z-index: 1;
+  -webkit-transform-origin: 4px 0px;
+  -ms-transform-origin: 4px 0px;
+  transform-origin: 4px 0px;
+  -webkit-transition: background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  -o-transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); }
+
+#menuToggle span:first-child {
+  -webkit-transform-origin: 0% 0%;
+  -ms-transform-origin: 0% 0%;
+  transform-origin: 0% 0%; }
+
+#menuToggle span:nth-last-child(2) {
+  -webkit-transform-origin: 0% 100%;
+  -ms-transform-origin: 0% 100%;
+  transform-origin: 0% 100%; }
+
+/*
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  -webkit-transform: rotate(45deg) translate(-2px, -1px);
+  -ms-transform: rotate(45deg) translate(-2px, -1px);
+  transform: rotate(45deg) translate(-2px, -1px); }
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  -webkit-transform: rotate(0deg) scale(0.2, 0.2);
+  -ms-transform: rotate(0deg) scale(0.2, 0.2);
+  transform: rotate(0deg) scale(0.2, 0.2); }
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  -webkit-transform: rotate(-45deg) translate(0, -1px);
+  -ms-transform: rotate(-45deg) translate(0, -1px);
+  transform: rotate(-45deg) translate(0, -1px); }
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: absolute;
+  width: 250px;
+  height: 500px;
+  margin: 10px 0 0 -32px;
+  padding: 50px;
+  background: black;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  -webkit-transform-origin: 0% 0%;
+  -ms-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+  -webkit-transform: translate(-100%, 0);
+  -ms-transform: translate(-100%, 0);
+  transform: translate(-100%, 0);
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  -o-transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); }
+  #menu a {
+    color: white;
+    -webkit-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    transition: color 0.3s ease; }
+  #menu a:hover {
+    color: tomato; }
+
+#menu li {
+  padding: 10px 0;
+  font-size: 22px; }
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none; }
+
+@media (min-width: 760px) {
+  #menu, #menuToggle {
+    display: none; } }
+
+.img-wrap {
+  text-align: center; }
+
+.text-wrap {
+  position: absolute;
+  font-size: .7em;
+  color: white;
+  text-shadow: 5px 3px 3px black; }
+  .text-wrap a {
+    font-size: 1.2em;
+    color: white;
+    margin-top: 1em;
+    padding: .5em 3em;
+    border: 1px solid;
+    outline: 1px gray solid; }
+  .text-wrap h2 {
+    margin: 0; }
+
+@media screen and (min-width: 760px) {
+  .text-wrap {
+    font-size: 1em; } }
+
+@media screen and (min-width: 990px) {
+  .text-wrap {
+    font-size: .7em; }
+  .work-showcase {
+    margin-bottom: 5em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; } }
+
+.about-main h2 {
+  font-size: 1.2em; }
+
+@media screen and (min-width: 760px) {
+  .about-main h2 {
+    font-size: 2em; } }
+
+@media screen and (min-width: 990px) {
+  .about-main h2 {
+    font-size: 2.5em; } }
+
+.work-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  .work-wrap a {
+    margin: .5em; }
+  .work-wrap h3 {
+    text-transform: uppercase;
+    font-size: 1em; }
+
+@media screen and (min-width: 760px) {
+  a {
+    width: 40%; } }
+
+@media screen and (min-width: 990px) {
+  a {
+    width: 30%; } }
+
+.logo-wrap img {
+  top: 40%; }
+
+.logo-wrap h2 {
+  position: absolute;
+  top: 70%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1em;
+  color: white;
+  text-shadow: 5px 3px 3px black; }
+
+@media screen and (min-width: 500px) {
+  .logo-wrap h2 {
+    font-size: 1.5em; } }
+
+@media screen and (min-width: 800px) {
+  .logo-wrap h2 {
+    font-size: 2em; } }
+
+.contact-main form {
+  width: 75%;
+  margin: 1em;
+  padding: 1em;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  line-height: 1.5;
+  font-weight: 200; }
+
+.contact-main .row {
+  width: 100%; }
+
+.contact-main .col-75 {
+  width: 100%; }
+
+.contact-main input, .contact-main textarea {
+  border: none;
+  outline: none;
+  resize: none;
+  width: 100%;
+  padding: 1em;
+  margin: 10px 0 20px;
+  border-radius: 3px;
+  background: lightgray; }
+  .contact-main input:focus, .contact-main textarea:focus {
+    border: 2px solid red; }
+
+.contact-main .submit {
+  font-size: .8em;
+  background: seagreen;
+  color: white; }
+  .contact-main .submit:focus {
+    border: none;
+    background: mediumseagreen; }
+
+@media (min-width: 600px) {
+  .contact-main .row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end; }
+  .contact-main .col-25 {
+    width: 25%;
+    text-align: right;
+    margin-right: 1em; }
+  .contact-main .col-75 {
+    width: 75%; }
+  .contact-main .submit {
+    width: 25%; } }
+
+h2 {
+  font-size: 2.5em; }
+
+h3 {
+  font-size: 1.5em; }
+
+h2, h3 {
+  margin: 1em;
+  text-align: center; }
+
+.text-box {
+  text-align: center;
+  padding: 0 3em 3em 3em;
+  min-height: 15em;
+  line-height: 1.5;
+  font-weight: 200; }

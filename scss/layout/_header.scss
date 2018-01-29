@@ -1,0 +1,63 @@
+.header-start {
+  height: 4em;
+}
+
+header {
+  background-color: black;
+  color: white;
+  height: 4em;
+  width: 100%;
+  padding: 0 1em;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+
+  h1 {
+    top: .7em;
+    right: 1em;
+    position: absolute;
+    font-size: 1.5em;
+    border: 2px solid white;
+    padding: 6px;
+    margin: -6px;
+    border-radius: 15px;
+
+  }
+}
+
+.desktop-menu {
+  display: none;
+  width: 80%;
+  font-size: .8em;
+
+  ul {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  a {
+    text-decoration: none;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+
+    &:hover {
+      color: red;
+      transition: all .3s ease;
+    }
+  }
+}
+
+@media (min-width: 760px) {
+  .desktop-menu {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .desktop-menu {
+    margin: 0 auto;
+    max-width: 50%;
+  }
+}
